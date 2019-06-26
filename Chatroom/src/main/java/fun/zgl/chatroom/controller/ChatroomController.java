@@ -4,15 +4,14 @@ import fun.zgl.chatroom.pojo.ChatroomMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ Description: chatroom的Controller
- * @ Author: zwl
- * @ Create: 2019/6/26
- * @ Since: 1.0.0
+ * @description chatroom的Controller
+ * @author zwl
+ * @date 2019/6/26
+ * @since 1.0.0
  */
 @RestController
 //@RequestMapping(value = "chatroom")
@@ -37,10 +36,10 @@ public class ChatroomController {
         ChatroomMessage message = new ChatroomMessage(srcId, dstId, msg);
 
         // 告知src本次请求要传递的消息
-        simpMessagingTemplate.convertAndSendToUser(message.getSrcId(), "/queue/getResponse", message.getMsg());
+        simpMessagingTemplate.convertAndSendToUser(String.valueOf(message.getSrcId()), "/queue/getResponse", message);
 
         // 告知dst本次请求要传递的消息
-        simpMessagingTemplate.convertAndSendToUser(message.getDstId(), "/queue/getResponse", message.getMsg());
+        simpMessagingTemplate.convertAndSendToUser(String.valueOf(message.getDstId()), "/queue/getResponse", message);
     }
 
 }

@@ -7,14 +7,14 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 /**
- * @ Description: 启用STOMP的配置类
- * @ Author: zwl
- * @ Create: 2019/6/26
- * @ Since: 1.0.0
+ * @description 启用STOMP的配置类
+ * @author zwl
+ * @date 2019/6/26
+ * @since 1.0.0
  */
 @Configuration
 @EnableWebSocketMessageBroker
-public class STOMPConfig extends WebSocketMessageBrokerConfigurer {
+public class STOMPConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {

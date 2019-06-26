@@ -1,10 +1,10 @@
 package fun.zgl.chatroom.pojo;
 
 /**
- * @ Description: 定义一个消息载体，用来每次返回消息
- * @ Author: zwl
- * @ Create: 2019/6/26
- * @ Since: 1.0.0
+ * @description 定义一个消息载体，用来每次返回消息
+ * @author zwl
+ * @date 2019/6/26
+ * @since 1.0.0
  */
 public class ChatroomMessage {
     public ChatroomMessage(){}
